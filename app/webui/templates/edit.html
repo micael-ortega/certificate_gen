@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+<form action="{{ url_for('.update_course', id=query.id) }}" method="POST">
+    {{form.course.label}}
+    {{form.course(value=query.course)}}
+    {{form.duration.label}}
+    {{form.duration(value=query.duration)}}
+    {{form.isbttc.label}}
+    {{form.isbttc(value=query.isbttc)}}
+    {{form.edit}}
+</form>
+
+{% endblock %}

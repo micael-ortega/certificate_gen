@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>Emissor de Certificados 🏆</h1>
+<form method="post" action="/certificate">
+    {{ form.csrf_token }}
+    {{form.instructor.label}}{{form.instructor(value=current_user.name)}}
+    {{form.course.label}}{{form.course}}
+    {{form.day_begin.label}}{{ form.day_begin }}
+    {{form.day_conclusion.label}}{{ form.day_conclusion(value=today) }}
+    {{form.names.label}}{{form.names}}
+    {{form.submit}}
+</form>
+
+
+
+{%endblock%}

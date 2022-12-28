@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>Painel Administrativo 🛠️</h1>
+<form method="post">
+    {{form.course.label}}{{form.course}}
+    {{form.duration.label}}{{form.duration}}
+    {{form.isbttc.label}}{{form.isbttc}}
+    {{form.edit}}
+</form>
+
+
+<table>
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Curso</th>
+            <th>Curso BTTC</th>
+            <th>Duração</th>
+            <th>Acão</th>
+        </tr>
+    <tbody>
+        {% for course in query %}
+        <tr>
+            <td>{{course.id}}</td>
+            <td>{{course.course}}</td>
+            <td>
+                {% if course.isbttc == True  %}
+                ✔️ 
+                {% else %}
+                ❌
+                {% endif %}
+
+             </td>
+            <td>{{course.duration}} horas</td>
+
+            <td>
+                <a href="delete/{{course.id}}">Excluir</a> |
+                <a href="update/{{course.id}}">Editar</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+    </thead>
+</table>
+
+{% endblock %}

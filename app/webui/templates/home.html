@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>Login</h1>
+    <form action="" method="post">
+        {{form.email.label}}
+        {{form.email(placeholder='user@email.com')}}
+        {{form.password.label}}
+        {{form.password(placeholder='*******')}}
+        {{form.submit}}
+
+    </form>
+{% endblock  %}

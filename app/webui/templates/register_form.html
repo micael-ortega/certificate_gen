@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>Register</h1>
+    <form method="post">
+        {{form.name.label}}
+        {{form.name(placeholder='Nome completo')}}
+        {{form.email.label}}
+        {{form.email(placeholder='user@email.com')}}
+        {{form.password.label}}
+        {{form.password(placeholder='*******')}}
+        {{form.submit}}
+
+    </form>
+{% endblock  %}
